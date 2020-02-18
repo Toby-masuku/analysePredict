@@ -27,3 +27,25 @@ def extract_municipality_hashtags(df):
         return(row)
     df=df.apply(fn,axis=1)
     return (df)
+
+    ## Function 7
+
+def stop_words_remover(df):
+    # copy df into a new data frame: df_new
+    df_new = df.copy()
+
+    # empty list to store tokens
+    tokens = []
+
+    # get tweets in list format
+    tweets = list(df['Tweets'])
+
+    # loop over tweets, tokenizing and removing stopwords
+    for item in tweets:
+      tok = item.lower().split()
+      tokens.append([i for i in tok if i not in stop_words_dict['stopwords']])
+
+    # add tokens to new_df in a new column: 'Split Tweets'
+    df_new['Without Stop Words'] = tokens
+
+    return df_new
