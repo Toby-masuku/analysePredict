@@ -8,11 +8,21 @@ def five_num_summary(items):
           'qi':np.quantile(items,q=0.25),
           'q3':np.quantile(items,q=0.75)}
 #function 6
-
 def word_splitter(df):
     df['Split Tweets']=df['Tweets'].str.lower().str.split(" ")
     return (df)
 
+#Function 5
+def number_of_tweets_per_day(df):
+    def fn (row):
+        row.Date=row.Date.split()[0]
+        return(row)
+    df_sliced=df.loc[:,['Date','Tweets']].apply(fn,axis=1)
+    
+    df_sliced.Date=pd.to_datetime(df_sliced.Date,format='%Y-%m-%d')
+    df_count=df_sliced.groupby('Date').count()
+    return (df_count)
+    
 #Function 4:
 def extract_municipality_hashtags(df):
     df['municipality']=np.nan
@@ -34,13 +44,13 @@ def stop_words_remover(df):
     # copy df into a new data frame: df_new
     df_new = df.copy()
 
-    # empty list to store tokens
+    # empty the list to store tokens.
     tokens = []
 
-    # get tweets in list format
+    # get tweets in the list format.
     tweets = list(df['Tweets'])
 
-    # loop over tweets, tokenizing and removing stopwords
+    # looping over tweets, tokenizing and removing stopwords.
     for item in tweets:
       tok = item.lower().split()
       tokens.append([i for i in tok if i not in stop_words_dict['stopwords']])
