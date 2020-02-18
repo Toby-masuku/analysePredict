@@ -15,7 +15,7 @@ def dictionary_of_metrics(list):
     dict ={} #created a dictionary
     for l in range(len(keys)):
         dict[keys[l]]=values[l]
-
+    return (dict)
     
 #Function 3
     def date_parser(dates):
@@ -36,12 +36,19 @@ def word_splitter(df):
     return (df)
 
 #Function 5
+# Declaring main function
 def number_of_tweets_per_day(df):
+    '''
+    This function takes a pandas dataframe as input.
+    It then returns a new dataframe, grouped by day, with the number of tweets for that day.
+    '''
+    #Function removes time values from the dates' column
     def fn (row):
         row.Date=row.Date.split()[0]
         return(row)
+    #It slices column's dates and tweets
     df_sliced=df.loc[:,['Date','Tweets']].apply(fn,axis=1)
-    
+    #Use pd.datetime to change date into datetime object
     df_sliced.Date=pd.to_datetime(df_sliced.Date,format='%Y-%m-%d')
     df_count=df_sliced.groupby('Date').count()
     return (df_count)
