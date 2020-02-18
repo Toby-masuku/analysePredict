@@ -23,15 +23,32 @@ def dictionary_of_metrics(list):
     return(parsed_dates)
 =======
 #function 2
-def five_num_summary(items):
-   
-    return{'max':max(items),
-          'median':np.median(items),
-          'min':min(items),
-          'qi':np.quantile(items,q=0.25),
-          'q3':np.quantile(items,q=0.75)}
+def five_num_summary(list):
+    """
+This functions give the maximum, minimum, median, 1st quartile of a given list as a dictionary:
+
+input:
+fn([1,2,3])
+___________________
+
+Output:
+[1,2,3]
+
+{max:3.0, min: 1.0, median:2.0, q1: 1.5, q3: 2.5}
+"""
+    # create dictionary for five number summary
+    dict={'max':round(np.max(list),2),
+    'min':round(np.min(list),2),
+    'median':round(np.percentile(list,50),2),
+    'q1':round(np.percentile(list,25),2),
+    'q3':round(np.percentile(list,75),2)}
+    
+    return (dict)
 #function 6
 def word_splitter(df):
+    """
+    This function splits the sentences in dataframe's column into list of separate words
+    """
     df['Split Tweets']=df['Tweets'].str.lower().str.split(" ")
     return (df)
 
