@@ -93,7 +93,7 @@ def number_of_tweets_per_day(df):
     def fn (row):
         row.Date=row.Date.split()[0]
         return(row)
-    #It slices column's dates and tweets
+    #Slices column's dates and tweets
     df_sliced=df.loc[:,['Date','Tweets']].apply(fn,axis=1)
     #Use pd.datetime to change date into datetime object
     df_sliced.Date=pd.to_datetime(df_sliced.Date,format='%Y-%m-%d')
