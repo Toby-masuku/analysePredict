@@ -1,1 +1,1 @@
-from . import group_6_module.py
+from . import group_6_module
