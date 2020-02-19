@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 #     url='https://github.com/Toby-masuku/analysePredict.git',
 #     authors='Christopher Mahlangu, Marcio Maluka, Phiwayinkosi Hlatshwayo, Toby Masuku, Tumisang Sentle',
 #     author_email='marciomaluka@ymail.com'
-)
+# )
 
 
 # from setuptools import setup, find_packages
