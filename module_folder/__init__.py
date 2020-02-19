@@ -1,1 +1,1 @@
-from . import Gsix
+from . import group_6_module.py
