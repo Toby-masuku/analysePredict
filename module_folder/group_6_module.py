@@ -16,7 +16,7 @@ def dictionary_of_metrics(list):
     {max:3.0, median:2.0, min: 1.0, q1: 1.5, q2: 2.5}
     """
 ### creating values for the dictionary and rounding them up to 2 decimal places
-    dict{ 'mean':round(np.mean(list),2),
+    dict={'mean':round(np.mean(list),2),
     'median':round(np.percentile(list,50),2),
     'var':round(np.var(list,ddof=1),2),
     'std':round(np.std(list,ddof=1),2),
