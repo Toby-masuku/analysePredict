@@ -16,21 +16,13 @@ def dictionary_of_metrics(list):
     {max:3.0, median:2.0, min: 1.0, q1: 1.5, q2: 2.5}
     """
 ### creating values for the dictionary and rounding them up to 2 decimal places
-    mean=round(np.mean(list),2)
-    median=np.percentile(list,50)
-    var=round(np.var(list,ddof=1),2)
-    std=round(np.std(list,ddof=1),2)
-    mini=round(min(list),2)
-    maxi=round(max(list),2)
+    dict{ 'mean':round(np.mean(list),2),
+    'median':round(np.percentile(list,50),2),
+    'var':round(np.var(list,ddof=1),2),
+    'std':round(np.std(list,ddof=1),2),
+    'mini':round(min(list),2),
+    'maxi':round(max(list),2)}
 
-### setting values for dictionary
-
-    keys=['mean','median','var','std','min','max']
-    values=[mean,median,var,std,mini,maxi]
-
-    dict ={} #created a dictionary
-    for l in range(len(keys)):
-        dict[keys[l]]=values[l]
     return (dict)
 
 #Function 3
