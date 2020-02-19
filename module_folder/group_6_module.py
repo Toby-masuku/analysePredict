@@ -86,6 +86,16 @@ def extract_municipality_hashtags(df):
     return (df)
 
     ## Function 7
+    
+"""" This is a function which removes english stop words from a tweet.
+     ---------------------------------------------------------------------------
+     1. It  take a pandas dataframe as input.
+     2. It  tokenise the sentences according to the definition in function 6.
+     3. uses the stop_words_dict and remove all stop words in the tokenised list.
+     4. "Without Stop Words" stores the localized column.
+     5. Function modifies the DataFrame
+     6. Finally the Function will return the modified Data Frame
+     --------------------------------------------------------------------------- """"
 
 def stop_words_remover(df):
     # copy df into a new data frame: df_new
