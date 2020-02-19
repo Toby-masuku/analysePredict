@@ -140,7 +140,7 @@ def stop_words_remover(df):
      6. Finally the Function will return the modified Data Frame
      --------------------------------------------------------------------------- 
      """
-     #Define Dictionary stop words
+     #Define Dictionary stop wordsg
      stop_words_dict = {
     'stopwords':[
         'where', 'done', 'if', 'before', 'll', 'very', 'keep', 'something', 'nothing', 'thereupon', 
