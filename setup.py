@@ -10,6 +10,7 @@ setup(
     install_requires=['numpy'],
     url='https://github.com/Toby-masuku/analysePredict.git',
     authors='Christopher Mahlangu, Marcio Maluka, Phiwayinkosi Hlatshwayo, Toby Masuku, Tumisang Sentle',
+    # maintainer='Group 6 members/authors'
     author_email='marciomaluka@ymail.com'
 )
 
