@@ -7,7 +7,7 @@ setup(
     license='MIT',
     description='This package extract tweets',
     long_description=open('README.md').read(),
-    install_requires=['numpy','pandas'],
+    install_requires=['numpy'],
     url='https://github.com/Toby-masuku/analysePredict.git',
     authors='Christopher Mahlangu, Marcio Maluka, Phiwayinkosi Hlatshwayo, Toby Masuku, Tumisang Sentle',
     author_email='marciomaluka@ymail.com'
